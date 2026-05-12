@@ -423,10 +423,16 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
     ui.overlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     setTimeout(() => ui.input?.focus(), 200);
+    // Hide the floating chatbot button while Career Intelligence is open
+    const chatBtn = document.getElementById("ask-steven-btn");
+    if (chatBtn) chatBtn.style.display = "none";
   }
   function close() {
     ui.overlay?.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    // Restore the floating chatbot button
+    const chatBtn = document.getElementById("ask-steven-btn");
+    if (chatBtn) chatBtn.style.display = "";
   }
 
   // Wire any element with [data-open-explore]
