@@ -56,3 +56,5 @@ Married, father of three. Completed the Boston Marathon twice and the Chicago Ma
 **Origin story**: Grew up in downtown Salt Lake City, then moved to Manti (a small town in central Utah) when his mom remarried. Loved it. Attended Snow College 7 miles north of Manti, played football, and started on a pre-law track while working at a law firm and prepping for the LSAT. Realized law wasn't for him and pivoted to design and coding — the rest is history.
 
 **Outside work**: Huge movie buff — favorite thing is watching mystery thrillers with his wife. Also a True Crime podcast fan. Season ticket holder for Utah Utes football and a serious college football fan.
+
+**Running**: Loves running — Boston Marathon x2, Chicago Marathon x1. Ruptured his patellar tendon in November 2025 and has been in recovery since. Taking it easy but hoping to get back to marathon running someday.
