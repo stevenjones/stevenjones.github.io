@@ -143,7 +143,7 @@ section { padding: var(--section-y) 0; }
 }
 .nav-links a:hover::after { right: 0; }
 .nav-cta {
-  border: 1px solid var(--ink); padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--ink); padding: 10px 22px; border-radius: 999px; white-space: nowrap;
   font-size: 13px; font-weight: 500;
   transition: background .2s ease, color .2s ease;
 }
@@ -168,7 +168,7 @@ section { padding: var(--section-y) 0; }
   .nav-links.open { transform: translateY(0); }
   .nav-links a { padding: 16px 0; border-top: 1px solid var(--rule-2); font-size: 18px; font-family: var(--serif); }
   .nav-links a::after { display: none; }
-  .nav-cta { align-self: flex-start; margin-top: 12px; }
+  .nav-cta { align-self: stretch; margin-top: 0; border: none; padding: 16px 0; border-radius: 0; font-size: 18px; font-family: var(--serif); border-top: 1px solid var(--rule-2); }
   .menu-btn { display: block; }
 }
 
