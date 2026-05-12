@@ -707,3 +707,9 @@ section { padding: var(--section-y) 0; }
   .nav-cta { padding: 8px 16px; font-size: 12px; }
   .brand { font-size: 18px; }
 }
+
+/* Eyebrow company label */
+.eyebrow-company {
+  color: #c85a2b;
+  font-weight: 600;
+}
