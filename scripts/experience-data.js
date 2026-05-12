@@ -362,7 +362,7 @@ window.EXPERIENCE_RECORDS = [
     description: "The thesis behind Fuzely and the way every modern growth team should operate: dashboards that just describe what happened are obsolete. Modern analytics, paired with LLMs and structured retrieval, can dynamically surface what to do next — turning insight into action.",
     related_skills: ["AI Product", "Operational AI", "Analytics", "Decision Systems"],
     tags: ["philosophy", "ai", "analytics", "fuzely"]
-  }
+  },
   // ----------- AI TOOLS & PLATFORM SKILLS -----------
   {
     id: "skill-claude",
