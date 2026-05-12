@@ -143,11 +143,12 @@ section { padding: var(--section-y) 0; }
 }
 .nav-links a:hover::after { right: 0; }
 .nav-cta {
-  border: 1px solid var(--ink); padding: 10px 22px; border-radius: 999px; white-space: nowrap;
-  font-size: 13px; font-weight: 500;
-  transition: background .2s ease, color .2s ease;
+  border: none; padding: 6px 0; border-radius: 0; white-space: nowrap;
+  font-size: 14px; font-weight: 600;
+  color: #c85a2b;
+  transition: opacity .2s ease;
 }
-.nav-cta:hover { background: var(--ink); color: var(--bg); }
+.nav-cta:hover { background: none; color: #c85a2b; opacity: 0.75; }
 .nav-cta::after { display: none !important; }
 
 .menu-btn { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
