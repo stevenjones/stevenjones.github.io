@@ -427,53 +427,33 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
   async function buildRecruiterBrief(payload) {
     const { query, records, themes } = payload;
 
-    // Show loading state in a modal overlay
     const overlay = document.createElement("div");
     overlay.className = "ex-brief-overlay";
-    overlay.innerHTML = `
-      <div class="ex-brief-panel">
-        <div class="ex-brief-loading">
-          <div class="ex-loading-bar"><span></span></div>
-          <p class="ex-loading-text">Generating targeted recruiter brief…</p>
-        </div>
-      </div>
-    `;
+    overlay.innerHTML = '<div class="ex-brief-panel"><div class="ex-brief-loading"><div class="ex-loading-bar"><span></span></div><p class="ex-loading-text">Generating targeted recruiter brief…</p></div></div>';
     document.body.appendChild(overlay);
 
     try {
       const recordSummaries = records.map(r =>
-        \`[\${r.type?.toUpperCase()}] \${r.company || ""} · \${r.role || r.skill_area} (\${r.timeframe || ""}): \${r.summary}\${r.impact ? " Impact: " + r.impact : ""}\`
+        "[" + (r.type || "record").toUpperCase() + "] " + (r.company || "") + " · " + (r.role || r.skill_area) + " (" + (r.timeframe || "") + "): " + r.summary + (r.impact ? " Impact: " + r.impact : "")
       ).join("\n");
 
-      const prompt = \`You are generating a targeted recruiter brief for Steven Jones based on a specific query.
-
-VISITOR QUERY: "\${query}"
-THEMES IDENTIFIED: \${(themes || []).join(", ")}
-
-RELEVANT EXPERIENCE:
-\${recordSummaries}
-
-ABOUT STEVE: Growth, product, and digital marketing leader with 15+ years. Started as a full-stack developer. Currently Head of Digital Growth & Product Marketing at Rise Internet. Also building Fuzely (AI-powered analytics SaaS). Based in Bluffdale, Utah. Open to new opportunities.
-
-Generate a targeted one-page recruiter brief in FIRST PERSON (as Steve speaking). Format it as clean text with these sections:
-
-## Why I'm Relevant for This
-2-3 sentences connecting Steve's background directly to the query.
-
-## Most Relevant Experience
-3-4 bullet points, each starting with a company/project name, covering the most relevant work. Be specific with outcomes.
-
-## Key Skills for This Area
-A comma-separated list of 6-8 specific skills relevant to the query.
-
-## My Approach
-2-3 sentences about how I think about and tackle this area — opinionated, grounded, not generic.
-
-## Let's Talk
-One warm closing line inviting the visitor to reach out (jonsie1312@gmail.com).
-
-Write in a confident, direct, human voice. Not corporate. Not fluffy. Specific and real.
-Respond with ONLY the formatted brief, no JSON, no preamble.\`;
+      const prompt = "You are generating a targeted recruiter brief for Steven Jones.\n\n" +
+        "VISITOR QUERY: \"" + query + "\"\n" +
+        "THEMES: " + (themes || []).join(", ") + "\n\n" +
+        "RELEVANT EXPERIENCE:\n" + recordSummaries + "\n\n" +
+        "ABOUT STEVE: Growth, product, and digital marketing leader with 15+ years. Started as a full-stack developer. Currently Head of Digital Growth & Product Marketing at Rise Internet. Also building Fuzely (AI-powered analytics SaaS). Based in Bluffdale, Utah. Open to new opportunities.\n\n" +
+        "Generate a targeted recruiter brief in FIRST PERSON (as Steve speaking). Use these sections:\n\n" +
+        "## Why I'm Relevant for This\n" +
+        "2-3 sentences connecting my background directly to the query.\n\n" +
+        "## Most Relevant Experience\n" +
+        "3-4 bullet points starting with company/project name. Be specific with outcomes.\n\n" +
+        "## Key Skills for This Area\n" +
+        "6-8 comma-separated specific skills.\n\n" +
+        "## My Approach\n" +
+        "2-3 sentences — opinionated, grounded, not generic.\n\n" +
+        "## Let\'s Talk\n" +
+        "One warm closing line inviting outreach (jonsie1312@gmail.com).\n\n" +
+        "Confident, direct, human voice. No corporate fluff. Respond with ONLY the formatted brief.";
 
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -488,24 +468,20 @@ Respond with ONLY the formatted brief, no JSON, no preamble.\`;
       const data = await res.json();
       const brief = data.content?.[0]?.text || "Couldn\'t generate brief — try again.";
 
-      // Render the brief
-      overlay.querySelector(".ex-brief-panel").innerHTML = \`
-        <div class="ex-brief-head">
-          <div class="ex-brief-title">
-            <span class="ex-dot"></span>
-            <span>Recruiter Brief · \${escapeHtml(query)}</span>
-          </div>
-          <div class="ex-brief-actions">
-            <button class="ex-brief-copy" id="ex-brief-copy">Copy brief</button>
-            <button class="ex-brief-close" id="ex-brief-close">✕</button>
-          </div>
-        </div>
-        <div class="ex-brief-body" id="ex-brief-body">\${formatBrief(brief)}</div>
-        <div class="ex-brief-foot">
-          <span>Generated for: "\${escapeHtml(query)}"</span>
-          <a href="mailto:jonsie1312@gmail.com" class="ex-brief-email">jonsie1312@gmail.com ↗</a>
-        </div>
-      \`;
+      const panel = overlay.querySelector(".ex-brief-panel");
+      panel.innerHTML =
+        "<div class=\"ex-brief-head\">" +
+          "<div class=\"ex-brief-title\"><span class=\"ex-dot\"></span><span>Recruiter Brief · " + escapeHtml(query) + "</span></div>" +
+          "<div class=\"ex-brief-actions\">" +
+            "<button class=\"ex-brief-copy\" id=\"ex-brief-copy\">Copy brief</button>" +
+            "<button class=\"ex-brief-close\" id=\"ex-brief-close\">✕</button>" +
+          "</div>" +
+        "</div>" +
+        "<div class=\"ex-brief-body\" id=\"ex-brief-body\">" + formatBrief(brief) + "</div>" +
+        "<div class=\"ex-brief-foot\">" +
+          "<span>Generated for: \"" + escapeHtml(query) + "\"</span>" +
+          "<a href=\"mailto:jonsie1312@gmail.com\" class=\"ex-brief-email\">jonsie1312@gmail.com ↗</a>" +
+        "</div>";
 
       document.getElementById("ex-brief-close").addEventListener("click", () => overlay.remove());
       document.getElementById("ex-brief-copy").addEventListener("click", () => {
