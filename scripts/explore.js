@@ -551,11 +551,16 @@ Respond with ONLY the formatted brief, no JSON, no preamble.\`;
   }
 
   // Wire any element with [data-open-explore]
-  document.addEventListener("DOMContentLoaded", () => {
+  function wireOpenButtons() {
     document.querySelectorAll("[data-open-explore]").forEach(el => {
       el.addEventListener("click", (e) => { e.preventDefault(); open(); });
     });
-  });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", wireOpenButtons);
+  } else {
+    wireOpenButtons();
+  }
 
   window.CareerIntelligence = { open, close, ask };
 })();
