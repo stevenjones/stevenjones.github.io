@@ -199,7 +199,8 @@ window.EXPERIENCE_RECORDS = [
     description: "Stood up personalization engines and lifecycle marketing programs across Credit.com and Lexington Law. Segmented customer journeys, deployed contextual experiences, and tied lifecycle touchpoints to engagement and retention metrics.",
     related_skills: ["Personalization", "Lifecycle Marketing", "Customer Journey", "Segmentation"],
     tools: ["Adobe Target", "Adobe Analytics", "Lifecycle Tools"],
-    tags: ["personalization", "lifecycle", "fintech", "cx", "retention"]
+    tags: ["personalization", "lifecycle", "fintech", "cx", "retention"],
+    companies: ["Credit.com", "Lexington Law"]
   },
   {
     id: "proj-fuzely",
@@ -248,7 +249,8 @@ window.EXPERIENCE_RECORDS = [
     description: "AI work spans three layers: (1) operational AI — deploying RouteThis Certify's AI heat-mapping to field crews; (2) AI in growth workflows — using LLMs to accelerate copy, instrumentation, and analytics; (3) building Fuzely, an AI-powered analytics and growth OS.",
     related_skills: ["AI Product", "LLM Workflows", "Operational AI", "AI Deployment"],
     tools: ["Claude", "ChatGPT", "RouteThis Certify"],
-    tags: ["ai", "machine-learning", "product", "operational-ai"]
+    tags: ["ai", "machine-learning", "product", "operational-ai"],
+    companies: ["Fuzely", "Rise Internet"]
   },
   {
     id: "skill-product-marketing",
@@ -258,7 +260,8 @@ window.EXPERIENCE_RECORDS = [
     description: "Product marketing work has spanned launching Rise Internet as a rebranded fiber/wireless ISP, positioning consumer financial products at Credit.com and Lexington Law, and supporting Vivint's expansion beyond door-to-door. Specializes in tying product evolution to brand, GTM, and acquisition.",
     related_skills: ["Positioning", "Messaging", "Launch Strategy", "GTM", "Brand Strategy"],
     tools: ["Figma", "Brandfolder"],
-    tags: ["product-marketing", "gtm", "positioning", "launch"]
+    tags: ["product-marketing", "gtm", "positioning", "launch"],
+    companies: ["Rise Internet", "Credit.com", "Lexington Law", "Vivint"]
   },
   {
     id: "skill-gtm",
@@ -268,7 +271,8 @@ window.EXPERIENCE_RECORDS = [
     description: "Most recent GTM work: the Rise Broadband → Rise Internet rebrand and product launch — coordinating brand identity, digital rollout, field-ops materials, and campaign execution across every customer touchpoint. Earlier GTM experience launching consumer financial products at Credit.com.",
     related_skills: ["Launch Strategy", "Brand Strategy", "Cross-Functional Leadership", "Field Ops"],
     tools: ["Brandfolder", "Figma", "Notion"],
-    tags: ["gtm", "launch", "brand", "leadership"]
+    tags: ["gtm", "launch", "brand", "leadership"],
+    companies: ["Rise Internet", "Credit.com"]
   },
   {
     id: "skill-leadership",
@@ -288,7 +292,8 @@ window.EXPERIENCE_RECORDS = [
     description: "Built customer experience programs across the entire post-acquisition journey — from MyRise self-service portal (real-time outage visibility, diagnostics, self-resolution), to RouteThis Certify (installation quality + handoff docs), to lifecycle marketing programs at Credit.com.",
     related_skills: ["Self-Service", "Post-Purchase", "Journey Mapping", "Lifecycle"],
     tools: ["Contentful", "React", "Twilio"],
-    tags: ["cx", "self-service", "post-purchase", "lifecycle"]
+    tags: ["cx", "self-service", "post-purchase", "lifecycle"],
+    companies: ["Rise Internet", "Credit.com"]
   },
   {
     id: "skill-growth-engineering",
@@ -298,7 +303,8 @@ window.EXPERIENCE_RECORDS = [
     description: "Started in full-stack development (ZAGG, One on One Marketing) before 'growth engineering' was a discipline. That foundation directly shapes how attribution systems, martech architecture, experimentation infrastructure, and AI workflows get built and scaled.",
     related_skills: ["Front-End Development", "Analytics Implementation", "Tag Management", "Martech Engineering"],
     tools: ["HTML/CSS/JS", "Adobe Launch", "GA"],
-    tags: ["growth-engineering", "engineering", "martech", "full-stack"]
+    tags: ["growth-engineering", "engineering", "martech", "full-stack"],
+    companies: ["ZAGG", "One on One Marketing"]
   },
   {
     id: "skill-fintech",
@@ -327,7 +333,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Modernizing legacy stacks: Martech rebuild at Credit.com, attribution rebuild at Rise.",
     description: "Repeatable pattern: arrives at an organization with fragmented, legacy systems and rebuilds them into modern, scalable, instrumented infrastructure. Credit.com (legacy PHP → headless AEM, months-to-days releases) and Rise Internet (channel-blind reporting → identity-stitched attribution).",
     related_skills: ["Legacy Modernization", "Headless Architecture", "Martech Strategy", "Change Management"],
-    tags: ["digital-transformation", "modernization", "martech", "leadership"]
+    tags: ["digital-transformation", "modernization", "martech", "leadership"],
+    companies: ["Rise Internet", "Credit.com"]
   },
   {
     id: "skill-ecommerce",
@@ -366,7 +373,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Analytics should be an active operating system, not a passive dashboard.",
     description: "The thesis behind Fuzely and the way I believe every modern growth team should operate: dashboards that just describe what happened are obsolete. Modern analytics, paired with LLMs and structured retrieval, can dynamically surface what to do next — turning insight into action.",
     related_skills: ["AI Product", "Operational AI", "Analytics", "Decision Systems"],
-    tags: ["philosophy", "ai", "analytics", "fuzely"]
+    tags: ["philosophy", "ai", "analytics", "fuzely"],
+    companies: ["Fuzely"]
   },
   // ----------- AI TOOLS & PLATFORM SKILLS -----------
   {
@@ -438,7 +446,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Attribution must connect to real revenue — not vanity metrics. Identity stitching across fragmented journeys is the only honest answer.",
     description: "My core belief: most attribution is theater. Last-click credit, channel-level aggregates, and isolated platform reporting all lie in different ways. The only attribution worth building connects a real person's first touchpoint to their actual revenue event — through identity stitching, call tracking, and CRM integration. I built this at Rise Internet (GA → Invoca → Snowflake → CSG) and Credit.com. I will always push for explainable attribution over convenient attribution.",
     related_skills: ["Attribution Modeling", "Identity Stitching", "Multi-Touch Attribution", "Revenue Attribution"],
-    tags: ["attribution", "philosophy", "revenue", "identity-stitching", "analytics"]
+    tags: ["attribution", "philosophy", "revenue", "identity-stitching", "analytics"],
+    companies: ["Rise Internet", "Credit.com"]
   },
   {
     id: "approach-experimentation",
@@ -447,7 +456,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Experimentation culture matters more than any single test result. The infrastructure, cadence, and organizational buy-in compound over time.",
     description: "I believe most experimentation programs fail not because of bad test ideas, but because of bad infrastructure and culture. A single winning A/B test doesn't move the business. An always-on experimentation program with clean tracking, fast deployment, and shared learnings does. I have built these programs at Vivint, Credit.com, and Rise Internet — always focused on compounding velocity over one-off wins.",
     related_skills: ["Experimentation Strategy", "A/B Testing", "CRO", "Test Velocity", "Experimentation Culture"],
-    tags: ["experimentation", "philosophy", "cro", "culture", "testing"]
+    tags: ["experimentation", "philosophy", "cro", "culture", "testing"],
+    companies: ["Rise Internet", "Credit.com", "Vivint", "Lendio", "One on One Marketing"]
   },
   {
     id: "approach-ai",
@@ -456,7 +466,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "AI should augment operators and accelerate decisions — not replace strategic thinking or produce generic automation.",
     description: "My AI philosophy has three layers: (1) AI as a workflow accelerator — using Claude and ChatGPT to compress research, drafting, and analysis cycles; (2) AI as an operational layer — deploying AI tools into real workflows like field operations (RouteThis Certify) and analytics (Fuzely); (3) building Fuzely as an AI-powered growth OS. I am skeptical of AI that produces generic output and excited about AI that surfaces specific, actionable, data-grounded insights.",
     related_skills: ["AI Product", "LLM Workflows", "Prompt Engineering", "Operational AI"],
-    tags: ["ai", "philosophy", "workflow", "product", "claude", "chatgpt"]
+    tags: ["ai", "philosophy", "workflow", "product", "claude", "chatgpt"],
+    companies: ["Fuzely", "Rise Internet"]
   },
   {
     id: "approach-leadership",
@@ -483,7 +494,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Client marketing is about connecting product value to customer behavior — not just sending emails.",
     description: "My approach to client/retention marketing is grounded in behavioral data and product usage signals. I build lifecycle programs that respond to what customers actually do — not just calendar-based drip sequences. At Credit.com I scaled lifecycle marketing across millions of users using engagement signals to drive onboarding, retention, and re-engagement. I see client marketing as a growth lever that most companies underinvest in relative to acquisition.",
     related_skills: ["Lifecycle Marketing", "Retention Strategy", "Customer Engagement", "Behavioral Segmentation", "Cross-Sell"],
-    tags: ["client-marketing", "retention", "lifecycle", "philosophy", "engagement", "waystar"]
+    tags: ["client-marketing", "retention", "lifecycle", "philosophy", "engagement", "waystar"],
+    companies: ["Credit.com", "Lexington Law"]
   },
   {
     id: "approach-work-style",
@@ -501,7 +513,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Most digital transformation fails because it is treated as a technology project rather than an organizational change.",
     description: "I have led two major digital transformations: the Credit.com Martech rebuild (legacy PHP → headless AEM, months-to-days releases) and Rise Internet's attribution infrastructure rebuild (channel-blind → identity-stitched revenue visibility). My pattern: start with the data and workflow problems, not the technology. Build for the team that will maintain it. Instrument everything from day one. Compress the feedback loop between change and measurement.",
     related_skills: ["Digital Transformation", "Change Management", "Martech Strategy", "Systems Thinking"],
-    tags: ["digital-transformation", "philosophy", "systems", "martech", "change-management"]
+    tags: ["digital-transformation", "philosophy", "systems", "martech", "change-management"],
+    companies: ["Rise Internet", "Credit.com"]
   },
   {
     id: "approach-product-thinking",
@@ -510,7 +523,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Product thinking means obsessing over the customer problem, not the feature list.",
     description: "I approach product as a growth leader — always asking: does this solve a real customer problem, and can we measure whether it does? I have brought this thinking to the MyRise portal (shifting from reactive call center to proactive self-service), to Fuzely (collapsing the gap between analytics insight and action), and to every experimentation program I have built. I am most effective when product, marketing, and engineering share a common view of what success looks like.",
     related_skills: ["Product Strategy", "Customer Problem Framing", "Product Marketing", "Cross-Functional Alignment"],
-    tags: ["product", "philosophy", "cx", "customer-problem", "growth"]
+    tags: ["product", "philosophy", "cx", "customer-problem", "growth"],
+    companies: ["Fuzely", "Rise Internet"]
   },
   {
     id: "approach-data",
@@ -519,7 +533,8 @@ window.EXPERIENCE_RECORDS = [
     summary: "Data without action is just storage. The job is to get from insight to decision as fast as possible.",
     description: "I believe most analytics teams are optimized for reporting, not decision-making. I push for executive dashboards that answer specific business questions, attribution systems that connect to real revenue events, and AI layers (like Fuzely) that surface recommendations rather than just charts. I have built reporting frameworks at Credit.com and Rise Internet that became the operating language of the business — used by executive teams to make actual resource allocation decisions.",
     related_skills: ["Analytics Strategy", "Executive Reporting", "KPI Frameworks", "Decision Intelligence"],
-    tags: ["data", "analytics", "philosophy", "reporting", "decision-making", "executive"]
+    tags: ["data", "analytics", "philosophy", "reporting", "decision-making", "executive"],
+    companies: ["Rise Internet", "Credit.com", "Fuzely"]
   },
 
 ];
