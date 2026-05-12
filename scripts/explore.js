@@ -338,8 +338,8 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
         <header class="ex-bar">
           <div class="ex-bar-l">
             <span class="ex-dot"></span>
-            <span class="ex-title">Career Intelligence</span>
-            <span class="ex-subtitle">My career · AI-powered exploration</span>
+            <span class="ex-title">Work & Thinking</span>
+            <span class="ex-subtitle">Explore my work · AI-assisted</span>
           </div>
           <div class="ex-bar-r">
             <span class="ex-stat">${records.length} records indexed</span>
@@ -363,7 +363,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
 
           <main class="ex-main">
             <div class="ex-intro">
-              <p class="eyebrow">AI-powered career intelligence</p>
+              <p class="eyebrow">Explore my work · AI-assisted</p>
               <h2 class="ex-h2">Ask anything about <em>my</em> work.</h2>
               <p class="ex-lede">
                 Ask about a skill, company, project, or how I think — and get a specific, AI-synthesized answer drawn from my full career history.
