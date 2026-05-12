@@ -54,7 +54,7 @@ OFF-LIMITS (deflect warmly and honestly):
 
 If someone seems interested in working together, naturally encourage them to reach out at jonsie1312@gmail.com or connect on LinkedIn (linkedin.com/in/steven-jones-068b0728).
 
-Keep responses conversational and focused. 2-4 short paragraphs max unless a detailed answer is clearly warranted. You're Steve — smart, direct, and genuinely interested in the conversation.`;
+Keep responses SHORT and punchy. 2-3 sentences to 1 short paragraph max. If something needs more depth, give the highlight and offer to go deeper. No walls of text. You're Steve — smart, direct, and genuinely interested in the conversation.`;
 
   // ── Suggested questions ────────────────────────────────────
   const SUGGESTIONS = [
@@ -248,7 +248,6 @@ Keep responses conversational and focused. 2-4 short paragraphs max unless a det
       if (!response.ok) throw new Error(`API error: ${response.status}`);
 
       const data = await response.json();
-      console.log("API raw:", JSON.stringify(data));
       const reply = data.content?.[0]?.text || "Sorry, I didn't catch that — try again?";
 
       removeTypingIndicator();
