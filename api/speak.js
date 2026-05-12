@@ -11,9 +11,7 @@ export default async function handler(req, res) {
   }
 
   const { text } = req.body;
-  if (!text) {
-    return res.status(400).json({ error: "No text provided" });
-  }
+  if (!text) return res.status(400).json({ error: "No text provided" });
 
   try {
     const response = await fetch(
@@ -30,6 +28,8 @@ export default async function handler(req, res) {
           voice_settings: {
             stability: 0.5,
             similarity_boost: 0.75,
+            style: 0.3,
+            use_speaker_boost: true,
           },
         }),
       }
@@ -38,17 +38,16 @@ export default async function handler(req, res) {
     if (!response.ok) {
       const err = await response.text();
       console.error("ElevenLabs error:", response.status, err);
-      return res.status(response.status).json({ error: "TTS request failed" });
+      return res.status(response.status).json({ error: "TTS failed" });
     }
 
-    // Stream audio back as mp3
     const audioBuffer = await response.arrayBuffer();
     res.setHeader("Content-Type", "audio/mpeg");
     res.setHeader("Cache-Control", "no-store");
-    return res.send(Buffer.from(audioBuffer));
+    return res.status(200).send(Buffer.from(audioBuffer));
 
   } catch (err) {
     console.error("Speak proxy error:", err);
-    return res.status(500).json({ error: "Speak proxy failed", detail: err.message });
+    return res.status(500).json({ error: "Proxy failed" });
   }
 }
