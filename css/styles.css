@@ -1038,6 +1038,7 @@ section { padding: var(--section-y) 0; }
 .ex-stat {
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--muted);
+  display: none;
 }
 .ex-close {
   width: 36px; height: 36px; border-radius: 50%;
