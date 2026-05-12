@@ -215,6 +215,7 @@ window.EXPERIENCE_RECORDS = [
     related_skills: ["AI Product", "Analytics", "Attribution", "Experimentation", "Customer Intelligence", "Product Strategy", "Solo Development", "Full-Stack"],
     tools: ["Claude", "Claude Terminal", "Claude Code", "Anthropic SDK", "Next.js 14", "TypeScript", "Supabase", "Tailwind CSS", "Vercel", "Snowflake", "WooCommerce API", "Mailchimp API"],
     tags: ["ai", "product", "founder", "analytics", "attribution", "experimentation", "saas", "solo-dev", "next-js", "supabase", "claude", "full-stack"],
+    companies: ["Fuzely"],
     impact: "In private beta · Solo-built full-stack AI SaaS product"
   },
 
@@ -425,7 +426,7 @@ window.EXPERIENCE_RECORDS = [
   {
     id: "proj-portfolio",
     type: "project",
-    company: "heysteve.io (Personal Portfolio)",
+    company: "heysteve.io",
     role: "Designer, Developer & AI Architect",
     timeframe: "2025 — Present",
     industry: "AI / Personal Brand",
@@ -435,6 +436,7 @@ window.EXPERIENCE_RECORDS = [
     related_skills: ["Agentic Development", "AI Agent Design", "Prompt Engineering", "Serverless Functions", "DNS & Deployment", "UI/UX", "Full-Stack"],
     tools: ["Claude Terminal", "Claude Code", "Claude Design", "Anthropic API", "Vercel", "GitHub", "GoDaddy", "HTML/CSS/JS", "ElevenLabs"],
     tags: ["portfolio", "heysteve", "personal-site", "personal-brand", "personal", "ai-agent", "agentic", "deployment", "claude-terminal", "claude-code"],
+    companies: ["heysteve.io", "heysteve", "Personal Portfolio"],
     impact: "Fully functional AI-powered portfolio site shipped via agentic development"
   },
 
