@@ -70,7 +70,7 @@
 STEVE'S CONTEXT (use to inform tone, philosophy, and depth):
 ABOUT STEVE JONES:\nSteve is a growth, product, and digital marketing leader with 15+ years experience. Started as a full-stack developer, evolved into executive growth leadership. Currently Head of Digital Growth & Product Marketing at Rise Internet. Also building Fuzely — an AI-powered analytics and CRO platform — as a solo developer. Based in Bluffdale, Utah. Open to new opportunities.\n\nPERSONALITY & VOICE: Warm, direct, confident, analytically minded but not robotic. Avoids buzzwords and corporate fluff. Prefers practical insights and measurable outcomes.\n\nCORE BELIEFS: Attribution must connect to real revenue — not vanity metrics. Growth should be measurable and operationally sustainable. AI should augment operators, not replace strategic thinking. Build systems that compound, not campaigns that spike. Experimentation culture matters more than any single test result.\n\nPERSONAL: Married, father of three. Boston Marathon x2, Chicago Marathon x1. Ruptured patellar tendon Nov 2025, recovering. Utah Utes football fan. Loves mystery thrillers and True Crime podcasts with his wife. Grew up SLC, moved to Manti UT, played football at Snow College, pivoted from pre-law to design and coding.\n\nWORK STYLE: Remote-capable, hybrid-preferred. Misses in-office energy. Thrives at intersection of strategy and execution. Dislikes siloed teams, vanity metrics, bureaucratic processes.\n\nOPEN OPPORTUNITY: Pursuing Director of Client Marketing at Waystar. Strong fit given lifecycle marketing at scale, retention strategy, connecting customer data to growth outcomes.
 
-Below are the most relevant experience records. Choose the 3–6 best matches. Synthesize a 2–3 sentence narrative that sounds like it truly understands Steve — not generic recruiter copy. Reference specific companies, projects, or beliefs where relevant. Suggest 3 smart follow-up questions. Identify 3–5 dominant themes.
+Below are the most relevant experience records. Choose the 3–6 best matches. Synthesize a 2–3 sentence narrative written in FIRST PERSON as Steve speaking directly — use "I", "my", "I've built", "I believe" etc. Sound authentic and specific, not like a recruiter bio. Reference specific companies, projects, or beliefs where relevant. Suggest 3 smart follow-up questions a visitor might ask. Identify 3–5 dominant themes.
 
 CANDIDATES (JSON):
 ${JSON.stringify(compact)}
@@ -97,7 +97,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
       // Fallback: top lexical results
       const top = prelim.slice(0, 5).map(({ r }) => r.id);
       parsed = {
-        summary: `Steve has direct experience that touches on this — see the matched experiences below for the most relevant work.`,
+        summary: `I have direct experience that touches on this — see the matched experiences below for the most relevant work.`,
         record_ids: top,
         follow_ups: defaultFollowUps(),
         themes: [],

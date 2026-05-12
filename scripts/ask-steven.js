@@ -376,6 +376,15 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     voiceActive ? stopVoice() : startVoice();
   }
 
+  function initVoice() {
+    if (!VOICE_ENABLED) return;
+    const micBtn = document.getElementById("ask-steven-mic");
+    if (!micBtn) return;
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { micBtn.style.display = "none"; return; }
+    micBtn.addEventListener("click", toggleVoice);
+  }
+
   function startVoice() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
@@ -385,24 +394,33 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
 
     voiceActive = true;
     updateMicUI(true);
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
 
     recognition = new SpeechRecognition();
-    recognition.continuous = false;
+    recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = "en-US";
 
     const input = document.getElementById("ask-steven-input");
+    let silenceTimer = null;
 
     recognition.onresult = (e) => {
+      // Clear silence timer on any speech
+      clearTimeout(silenceTimer);
       const transcript = Array.from(e.results)
         .map(r => r[0].transcript)
         .join("");
       input.value = transcript;
       input.style.height = "auto";
       input.style.height = Math.min(input.scrollHeight, 100) + "px";
+      // Auto-stop after 4 seconds of silence
+      silenceTimer = setTimeout(() => {
+        recognition.stop();
+      }, 4000);
     };
 
     recognition.onend = () => {
+      clearTimeout(silenceTimer);
       voiceActive = false;
       updateMicUI(false);
       const text = input.value.trim();
@@ -410,10 +428,11 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     };
 
     recognition.onerror = (e) => {
+      clearTimeout(silenceTimer);
       voiceActive = false;
       updateMicUI(false);
       if (e.error !== "no-speech") {
-        addMessage("steve", "Couldn\'t catch that — try again or just type!");
+        addMessage("steve", "Couldn't catch that — try again or just type!");
       }
     };
 
@@ -462,109 +481,7 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
   }
 
 
-  // ── Voice feature ─────────────────────────────────────────
-  // Gated by VOICE_ENABLED flag at top of file.
-  // Uses Web Speech API for input, ElevenLabs for output.
-  // ──────────────────────────────────────────────────────────
-  function initVoice() {
-    if (!VOICE_ENABLED) return;
-
-    const micBtn = document.getElementById("ask-steven-mic");
-    if (!micBtn) return;
-
-    // Check browser support
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-      micBtn.style.display = "none"; // hide if unsupported
-      return;
-    }
-
-    recognition = new SpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = true;
-    recognition.lang = "en-US";
-
-    recognition.onstart = () => {
-      micBtn.classList.add("listening");
-      micBtn.setAttribute("aria-label", "Listening...");
-      document.getElementById("ask-steven-input").placeholder = "Listening…";
-    };
-
-    recognition.onresult = (e) => {
-      const transcript = Array.from(e.results)
-        .map(r => r[0].transcript)
-        .join("");
-      document.getElementById("ask-steven-input").value = transcript;
-    };
-
-    recognition.onend = () => {
-      micBtn.classList.remove("listening");
-      micBtn.setAttribute("aria-label", "Toggle voice input");
-      document.getElementById("ask-steven-input").placeholder = "Ask me about my work, experience, or Fuzely…";
-      // Auto-send if we got something
-      const text = document.getElementById("ask-steven-input").value.trim();
-      if (text) handleSend();
-    };
-
-    recognition.onerror = (e) => {
-      console.warn("Speech recognition error:", e.error);
-      micBtn.classList.remove("listening");
-      stopVoice();
-    };
-
-    micBtn.addEventListener("click", () => {
-      if (voiceActive) {
-        stopVoice();
-      } else {
-        startVoice();
-      }
-    });
-  }
-
-  function startVoice() {
-    if (!VOICE_ENABLED || !recognition) return;
-    voiceActive = true;
-    const micBtn = document.getElementById("ask-steven-mic");
-    if (micBtn) micBtn.classList.add("voice-on");
-    // Stop any playing audio
-    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
-    try { recognition.start(); } catch(e) { console.warn("Recognition start error:", e); }
-  }
-
-  function stopVoice() {
-    voiceActive = false;
-    const micBtn = document.getElementById("ask-steven-mic");
-    if (micBtn) micBtn.classList.remove("voice-on", "listening");
-    try { recognition?.stop(); } catch(e) {}
-  }
-
-  async function speakResponse(text) {
-    if (!VOICE_ENABLED) return;
-    // Stop any currently playing audio
-    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
-    try {
-      const res = await fetch("/api/speak", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      });
-      if (!res.ok) return;
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      currentAudio = new Audio(url);
-      currentAudio.onended = () => {
-        URL.revokeObjectURL(url);
-        currentAudio = null;
-        // Restart listening after response plays if voice mode still on
-        if (voiceActive) setTimeout(() => { try { recognition?.start(); } catch(e) {} }, 400);
-      };
-      await currentAudio.play();
-    } catch(e) {
-      console.warn("TTS playback error:", e);
-    }
-  }
-
-  // ── Boot ───────────────────────────────────────────────────
+    // ── Boot ───────────────────────────────────────────────────
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
