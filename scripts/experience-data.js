@@ -207,9 +207,10 @@ window.EXPERIENCE_RECORDS = [
     skill_area: "AI & Product",
     summary: "Building Fuzely — an AI-powered growth OS turning analytics from passive dashboards into active operations.",
     description: "Independent product work building an AI-powered analytics and growth operating system. Combines attribution, experimentation, customer intelligence, and AI-generated operational insights into a unified surface. Goal: collapse the gap between insight and action.",
-    related_skills: ["AI Product", "Analytics", "Attribution", "Experimentation", "Customer Intelligence", "Product Strategy"],
-    tools: ["Claude", "ChatGPT", "Modern Data Stack"],
-    tags: ["ai", "product", "founder", "analytics", "attribution", "experimentation", "saas"]
+    related_skills: ["AI Product", "Analytics", "Attribution", "Experimentation", "Customer Intelligence", "Product Strategy", "Solo Development", "Full-Stack"],
+    tools: ["Claude", "Claude Terminal", "Claude Code", "Anthropic SDK", "Next.js 14", "TypeScript", "Supabase", "Tailwind CSS", "Vercel", "Snowflake", "WooCommerce API", "Mailchimp API"],
+    tags: ["ai", "product", "founder", "analytics", "attribution", "experimentation", "saas", "solo-dev", "next-js", "supabase", "claude", "full-stack"],
+    impact: "In private beta · Solo-built full-stack AI SaaS product"
   },
 
   // ----------- SKILL STORIES -----------
@@ -362,4 +363,66 @@ window.EXPERIENCE_RECORDS = [
     related_skills: ["AI Product", "Operational AI", "Analytics", "Decision Systems"],
     tags: ["philosophy", "ai", "analytics", "fuzely"]
   }
+  // ----------- AI TOOLS & PLATFORM SKILLS -----------
+  {
+    id: "skill-claude",
+    type: "skill",
+    skill_area: "Claude (Anthropic)",
+    summary: "Advanced Claude user — prompt engineering, system prompts, AI agents, API integration, and agentic workflows.",
+    description: "Uses Claude as a primary AI operating layer across multiple domains: writing system prompts and context files for AI agents (the Ask Steve widget on this portfolio), API integration via the Anthropic SDK, prompt engineering for structured JSON outputs, streaming responses, and multi-turn conversation design. Also uses Claude for research acceleration, content development, analytics interpretation, and strategic thinking.",
+    related_skills: ["Prompt Engineering", "System Prompt Design", "AI Agent Development", "Anthropic SDK", "AI Workflow Automation"],
+    tools: ["Claude Sonnet", "Claude Opus", "Anthropic API", "claude.ai"],
+    tags: ["claude", "anthropic", "ai", "prompt-engineering", "ai-agent", "llm", "workflow"],
+    companies: ["Fuzely", "Rise Internet", "Portfolio"]
+  },
+  {
+    id: "skill-claude-code",
+    type: "skill",
+    skill_area: "Claude Code / Claude Terminal",
+    summary: "Uses Claude Code and Claude Terminal for agentic full-stack development — writing, editing, committing, and deploying code end-to-end.",
+    description: "Primary development workflow for Fuzely and this portfolio site uses Claude Terminal for agentic coding: writing and editing files, running bash commands, committing to GitHub, and deploying to Vercel — all inside a conversational session. Has used Claude Code to build and ship a full Next.js 14 SaaS application (Fuzely) and a complete personal portfolio site from scratch, including serverless API functions, database migrations, and DNS configuration.",
+    related_skills: ["Agentic Development", "Full-Stack Development", "Git & GitHub", "Vercel Deployment", "Serverless Functions", "Next.js"],
+    tools: ["Claude Terminal", "Claude Code", "GitHub", "Vercel", "Bash", "Next.js 14", "Supabase"],
+    tags: ["claude-code", "claude-terminal", "agentic", "full-stack", "development", "claude", "ai-dev"],
+    companies: ["Fuzely", "Portfolio"],
+    impact: "Shipped full SaaS product and portfolio site using agentic AI development"
+  },
+  {
+    id: "skill-claude-design",
+    type: "skill",
+    skill_area: "Claude Design",
+    summary: "Uses Claude Design for rapid UI mockups, design iteration, and visual prototyping.",
+    description: "Leverages Claude Design to prototype and iterate on UI concepts quickly — including resume modal layouts, dashboard UI concepts for Fuzely, and design system exploration. Uses it to translate design intent into production-ready HTML/CSS components and to rapidly explore visual directions before committing to implementation.",
+    related_skills: ["UI Prototyping", "Design Systems", "HTML/CSS", "Rapid Iteration", "Visual Design"],
+    tools: ["Claude Design", "HTML", "CSS", "Tailwind CSS"],
+    tags: ["claude-design", "ui", "design", "prototyping", "claude", "visual"],
+    companies: ["Fuzely", "Portfolio"]
+  },
+  {
+    id: "skill-chatgpt",
+    type: "skill",
+    skill_area: "ChatGPT (OpenAI)",
+    summary: "Uses ChatGPT for research acceleration, content development, strategic brainstorming, and workflow optimization.",
+    description: "Actively uses ChatGPT as a complementary AI tool alongside Claude — particularly for research synthesis, content ideation, copy refinement, and brainstorming strategic frameworks. Uses GPT-4 for tasks where a second AI perspective adds value, and has integrated OpenAI's API concepts into thinking around AI product architecture.",
+    related_skills: ["AI-Assisted Research", "Content Development", "Workflow Automation", "Strategic Brainstorming"],
+    tools: ["ChatGPT", "GPT-4", "OpenAI API"],
+    tags: ["chatgpt", "openai", "ai", "workflow", "research", "content"],
+    companies: ["Fuzely", "Rise Internet"]
+  },
+  {
+    id: "proj-portfolio",
+    type: "project",
+    company: "Personal (heysteve.io)",
+    role: "Designer, Developer & AI Architect",
+    timeframe: "2025 — Present",
+    industry: "AI / Personal Brand",
+    skill_area: "AI-Powered Development",
+    summary: "Built a complete personal portfolio site end-to-end using Claude Terminal — including an embedded AI agent, Career Intelligence modal, voice capability, and custom domain.",
+    description: "Designed and built heysteve.io entirely through agentic AI development using Claude Terminal. The site features: a fully custom AI chat agent (Ask Steve) powered by Claude via a Vercel serverless proxy, a Career Intelligence modal with AI-driven experience retrieval and ranking, image compositing tools, a résumé modal, and full mobile responsiveness. Deployed to Vercel with a custom GoDaddy domain. Every commit, DNS record, and CSS rule was written through conversational AI sessions.",
+    related_skills: ["Agentic Development", "AI Agent Design", "Prompt Engineering", "Serverless Functions", "DNS & Deployment", "UI/UX", "Full-Stack"],
+    tools: ["Claude Terminal", "Claude Code", "Claude Design", "Anthropic API", "Vercel", "GitHub", "GoDaddy", "HTML/CSS/JS", "ElevenLabs"],
+    tags: ["portfolio", "ai-agent", "claude", "full-stack", "agentic", "personal-brand", "deployment"],
+    impact: "Fully functional AI-powered portfolio site shipped via agentic development"
+  },
+
 ];
