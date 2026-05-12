@@ -343,7 +343,7 @@ window.EXPERIENCE_RECORDS = [
     summary: "A builder at the intersection of strategy, data, creativity, and technology.",
     description: "My career origin in full-stack dev shaped a core belief: the best growth leaders sit at the intersection of strategy and execution. I speak code, design, analytics, and brand fluently enough to translate between teams — and I care more about shipped systems than tidy decks.",
     related_skills: ["Strategy", "Execution", "Cross-Functional Translation"],
-    tags: ["philosophy", "builder", "strategy-execution"]
+    tags: ["philosophy", "working-belief", "mindset", "builder"]
   },
   {
     id: "phil-systems",
@@ -412,16 +412,16 @@ window.EXPERIENCE_RECORDS = [
   {
     id: "proj-portfolio",
     type: "project",
-    company: "Personal (heysteve.io)",
+    company: "heysteve.io (Personal Portfolio)",
     role: "Designer, Developer & AI Architect",
     timeframe: "2025 — Present",
     industry: "AI / Personal Brand",
-    skill_area: "AI-Powered Development",
+    skill_area: "Personal Portfolio & Brand",
     summary: "Built a complete personal portfolio site end-to-end using Claude Terminal — including an embedded AI agent, Career Intelligence modal, voice capability, and custom domain.",
     description: "Designed and built heysteve.io entirely through agentic AI development using Claude Terminal. The site features: a fully custom AI chat agent (Ask Steve) powered by Claude via a Vercel serverless proxy, a Career Intelligence modal with AI-driven experience retrieval and ranking, image compositing tools, a résumé modal, and full mobile responsiveness. Deployed to Vercel with a custom GoDaddy domain. Every commit, DNS record, and CSS rule was written through conversational AI sessions.",
     related_skills: ["Agentic Development", "AI Agent Design", "Prompt Engineering", "Serverless Functions", "DNS & Deployment", "UI/UX", "Full-Stack"],
     tools: ["Claude Terminal", "Claude Code", "Claude Design", "Anthropic API", "Vercel", "GitHub", "GoDaddy", "HTML/CSS/JS", "ElevenLabs"],
-    tags: ["portfolio", "ai-agent", "claude", "full-stack", "agentic", "personal-brand", "deployment"],
+    tags: ["portfolio", "heysteve", "personal-site", "personal-brand", "personal", "ai-agent", "agentic", "deployment", "claude-terminal", "claude-code"],
     impact: "Fully functional AI-powered portfolio site shipped via agentic development"
   },
 
@@ -487,7 +487,7 @@ window.EXPERIENCE_RECORDS = [
     summary: "Remote-capable and hybrid-preferred. Misses in-office energy. Believes face-to-face time builds better teams.",
     description: "I work well remotely and have done so effectively, but genuinely value in-person collaboration for the relationship depth and creative energy it creates. I thrive in environments where strategy and execution coexist — where leaders are expected to both think and do. I dislike bureaucratic processes, endless approval chains, and organizations where politics matter more than outcomes. I am energized by ambitious problems, fast iteration, and teams that care about the work.",
     related_skills: ["Remote Work", "Hybrid Collaboration", "Cross-Functional Leadership"],
-    tags: ["culture", "work-style", "remote", "hybrid", "collaboration", "philosophy"]
+    tags: ["philosophy", "working-belief", "culture", "work-style", "remote", "hybrid"]
   },
   {
     id: "approach-digital-transformation",
