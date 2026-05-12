@@ -248,6 +248,7 @@ Keep responses conversational and focused. 2-4 short paragraphs max unless a det
       if (!response.ok) throw new Error(`API error: ${response.status}`);
 
       const data = await response.json();
+      console.log("API raw:", JSON.stringify(data));
       const reply = data.content?.[0]?.text || "Sorry, I didn't catch that — try again?";
 
       removeTypingIndicator();
