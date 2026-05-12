@@ -425,4 +425,96 @@ window.EXPERIENCE_RECORDS = [
     impact: "Fully functional AI-powered portfolio site shipped via agentic development"
   },
 
+  // ----------- APPROACH & PHILOSOPHY (CAREER) -----------
+  {
+    id: "approach-attribution",
+    type: "philosophy",
+    skill_area: "Attribution Philosophy",
+    summary: "Attribution must connect to real revenue — not vanity metrics. Identity stitching across fragmented journeys is the only honest answer.",
+    description: "Steve's core belief: most attribution is theater. Last-click credit, channel-level aggregates, and isolated platform reporting all lie in different ways. The only attribution worth building connects a real person's first touchpoint to their actual revenue event — through identity stitching, call tracking, and CRM integration. He built this at Rise Internet (GA → Invoca → Snowflake → CSG) and Credit.com. He will always push for explainable attribution over convenient attribution.",
+    related_skills: ["Attribution Modeling", "Identity Stitching", "Multi-Touch Attribution", "Revenue Attribution"],
+    tags: ["attribution", "philosophy", "revenue", "identity-stitching", "analytics"]
+  },
+  {
+    id: "approach-experimentation",
+    type: "philosophy",
+    skill_area: "Experimentation Philosophy",
+    summary: "Experimentation culture matters more than any single test result. The infrastructure, cadence, and organizational buy-in compound over time.",
+    description: "Steve believes most experimentation programs fail not because of bad test ideas, but because of bad infrastructure and culture. A single winning A/B test doesn't move the business. A always-on experimentation program with clean tracking, fast deployment, and shared learnings does. He has built these programs at Vivint, Credit.com, and Rise Internet — always focused on compounding velocity over one-off wins.",
+    related_skills: ["Experimentation Strategy", "A/B Testing", "CRO", "Test Velocity", "Experimentation Culture"],
+    tags: ["experimentation", "philosophy", "cro", "culture", "testing"]
+  },
+  {
+    id: "approach-ai",
+    type: "philosophy",
+    skill_area: "AI Philosophy",
+    summary: "AI should augment operators and accelerate decisions — not replace strategic thinking or produce generic automation.",
+    description: "Steve's AI philosophy has three layers: (1) AI as a workflow accelerator — using Claude and ChatGPT to compress research, drafting, and analysis cycles; (2) AI as an operational layer — deploying AI tools into real workflows like field operations (RouteThis Certify) and analytics (Fuzely); (3) AI as a product surface — building Fuzely as an AI-powered growth OS. He is skeptical of AI that produces generic output and excited about AI that surfaces specific, actionable, data-grounded insights.",
+    related_skills: ["AI Product", "LLM Workflows", "Prompt Engineering", "Operational AI"],
+    tags: ["ai", "philosophy", "workflow", "product", "claude", "chatgpt"]
+  },
+  {
+    id: "approach-leadership",
+    type: "philosophy",
+    skill_area: "Leadership Philosophy",
+    summary: "Leadership means building systems and teams that outlast your involvement — not being the smartest person in the room.",
+    description: "Steve leads collaboratively and cross-functionally. He believes the best growth leaders sit at the intersection of strategy and execution — able to speak fluently with engineering, product, analytics, brand, and operations. He dislikes siloed teams, vanity metrics, and processes that exist to protect turf. He is energized by hard problems where the answer requires connecting dots across disciplines. He has led programs spanning marketing + engineering + product + field ops + vendors.",
+    related_skills: ["Cross-Functional Leadership", "Team Building", "Stakeholder Management", "Executive Communication"],
+    tags: ["leadership", "philosophy", "culture", "cross-functional", "collaboration"]
+  },
+  {
+    id: "approach-growth",
+    type: "philosophy",
+    skill_area: "Growth Philosophy",
+    summary: "Growth should be measurable, scalable, customer-focused, and operationally sustainable — not just a number on a slide.",
+    description: "Steve's growth philosophy centers on building compounding systems rather than chasing one-off wins. He believes acquisition efficiency (CAC), retention, and lifetime value are more important than top-line growth. He connects customer experience directly to growth outcomes — if the post-purchase experience is broken, no amount of acquisition spend fixes it. He has applied this thinking across telecom, fintech, smart home, and ecommerce.",
+    related_skills: ["Growth Strategy", "CAC Optimization", "Retention", "Lifecycle Marketing", "Customer Experience"],
+    tags: ["growth", "philosophy", "retention", "cac", "lifetime-value", "cx"]
+  },
+  {
+    id: "approach-client-marketing",
+    type: "philosophy",
+    skill_area: "Client Marketing & Retention",
+    summary: "Client marketing is about connecting product value to customer behavior — not just sending emails.",
+    description: "Steve's approach to client/retention marketing is grounded in behavioral data and product usage signals. He builds lifecycle programs that respond to what customers actually do — not just calendar-based drip sequences. At Credit.com he scaled lifecycle marketing across millions of users using engagement signals to drive onboarding, retention, and re-engagement. He sees client marketing as a growth lever that most companies underinvest in relative to acquisition.",
+    related_skills: ["Lifecycle Marketing", "Retention Strategy", "Customer Engagement", "Behavioral Segmentation", "Cross-Sell"],
+    tags: ["client-marketing", "retention", "lifecycle", "philosophy", "engagement", "waystar"]
+  },
+  {
+    id: "approach-work-style",
+    type: "philosophy",
+    skill_area: "Work Style & Culture",
+    summary: "Remote-capable and hybrid-preferred. Misses in-office energy. Believes face-to-face time builds better teams.",
+    description: "Steve works well remotely and has done so effectively, but genuinely values in-person collaboration for the relationship depth and creative energy it creates. He thrives in environments where strategy and execution coexist — where leaders are expected to both think and do. He dislikes bureaucratic processes, endless approval chains, and organizations where politics matter more than outcomes. He is energized by ambitious problems, fast iteration, and teams that care about the work.",
+    related_skills: ["Remote Work", "Hybrid Collaboration", "Cross-Functional Leadership"],
+    tags: ["culture", "work-style", "remote", "hybrid", "collaboration", "philosophy"]
+  },
+  {
+    id: "approach-digital-transformation",
+    type: "philosophy",
+    skill_area: "Digital Transformation Philosophy",
+    summary: "Most digital transformation fails because it is treated as a technology project rather than an organizational change.",
+    description: "Steve has led two major digital transformations: the Credit.com Martech rebuild (legacy PHP → headless AEM, months-to-days releases) and Rise Internet's attribution infrastructure rebuild (channel-blind → identity-stitched revenue visibility). His pattern: start with the data and workflow problems, not the technology. Build for the team that will maintain it. Instrument everything from day one. Compress the feedback loop between change and measurement.",
+    related_skills: ["Digital Transformation", "Change Management", "Martech Strategy", "Systems Thinking"],
+    tags: ["digital-transformation", "philosophy", "systems", "martech", "change-management"]
+  },
+  {
+    id: "approach-product-thinking",
+    type: "philosophy",
+    skill_area: "Product Thinking",
+    summary: "Product thinking means obsessing over the customer problem, not the feature list.",
+    description: "Steve approaches product as a growth leader — always asking: does this solve a real customer problem, and can we measure whether it does? He has brought this thinking to the MyRise portal (shifting from reactive call center to proactive self-service), to Fuzely (collapsing the gap between analytics insight and action), and to every experimentation program he has built. He is most effective when product, marketing, and engineering share a common view of what success looks like.",
+    related_skills: ["Product Strategy", "Customer Problem Framing", "Product Marketing", "Cross-Functional Alignment"],
+    tags: ["product", "philosophy", "cx", "customer-problem", "growth"]
+  },
+  {
+    id: "approach-data",
+    type: "philosophy",
+    skill_area: "Data & Analytics Philosophy",
+    summary: "Data without action is just storage. The job is to get from insight to decision as fast as possible.",
+    description: "Steve believes most analytics teams are optimized for reporting, not decision-making. He pushes for executive dashboards that answer specific business questions, attribution systems that connect to real revenue events, and AI layers (like Fuzely) that surface recommendations rather than just charts. He has built reporting frameworks at Credit.com and Rise Internet that became the operating language of the business — used by executive teams to make actual resource allocation decisions.",
+    related_skills: ["Analytics Strategy", "Executive Reporting", "KPI Frameworks", "Decision Intelligence"],
+    tags: ["data", "analytics", "philosophy", "reporting", "decision-making", "executive"]
+  },
+
 ];
