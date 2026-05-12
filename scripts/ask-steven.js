@@ -241,6 +241,20 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     input.style.height = "auto";
     hideSuggestions();
 
+    // ── Career intent routing ──────────────────────────────────────
+    // If the query looks like a career/work/skills question, hand it
+    // off to Career Intelligence. Falls back to chatbot if unavailable.
+    if (isCareerQuery(text) && window.CareerIntelligence) {
+      try {
+        closePanel();
+        window.CareerIntelligence.open();
+        window.CareerIntelligence.ask(text);
+        return;
+      } catch (e) {
+        console.warn('CareerIntelligence routing failed, falling back to chatbot', e);
+      }
+    }
+
     addMessage("user", text);
     messages.push({ role: "user", content: text });
 
@@ -277,6 +291,55 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     } finally {
       isLoading = false;
     }
+  }
+
+
+  // ── window.claude bridge for Career Intelligence ──────────────────
+  // explore.js calls window.claude.complete(prompt) — this bridges it
+  // to our existing /api/chat proxy without touching any other code.
+  window.claude = window.claude || {
+    complete: async function(prompt) {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-5',
+          max_tokens: 1000,
+          messages: [{ role: 'user', content: prompt }],
+        }),
+      });
+      const data = await res.json();
+      return data.content?.[0]?.text || '';
+    }
+  };
+
+  // ── Career intent detection ────────────────────────────────────────
+  // Conservative keyword list — only fires on clear career signals.
+  // Personal/hobby/philosophy/motivation questions pass through untouched.
+  function isCareerQuery(text) {
+    const t = text.toLowerCase();
+
+    // Explicit career/resume signals
+    const careerSignals = [
+      'experience', 'background', 'resume', 'cv', 'career', 'work at',
+      'worked at', 'worked on', 'role at', 'job at', 'position at',
+      'attribution', 'experimentation', 'a/b test', 'martech', 'analytics',
+      'cro', 'conversion', 'funnel', 'lifecycle', 'personalization',
+      'product marketing', 'growth marketing', 'digital marketing',
+      'go-to-market', 'gtm', 'rebrand', 'brand strategy',
+      'lead team', 'led team', 'manage team', 'cross-functional',
+      'credit.com', 'rise internet', 'rise broadband', 'vivint', 'lendio',
+      'zagg', 'one on one', 'lexington law', 'creditrepair',
+      'fuzely', 'adobe target', 'optimizely', 'vwo', 'invoca', 'snowflake',
+      'headless', 'cms', 'aem', 'contentful',
+      'fintech', 'telecom', 'ecommerce', 'saas',
+      'skill', 'skills', 'platform', 'tools', 'stack', 'technology',
+      'qualification', 'hire', 'hiring', 'recruiter', 'candidate',
+      'identity stitching', 'multi-touch', 'call center', 'call tracking',
+      'ai product', 'built', 'launched', 'shipped', 'implemented', 'led',
+    ];
+
+    return careerSignals.some(sig => t.includes(sig));
   }
 
   // ── Boot ───────────────────────────────────────────────────
