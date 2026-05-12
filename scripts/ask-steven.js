@@ -6,6 +6,18 @@
 (function () {
   "use strict";
 
+  // ============================================================
+  // VOICE FEATURE FLAG
+  // Set VOICE_ENABLED to true once ElevenLabs credentials are
+  // configured below. Set to false to completely disable voice.
+  // ============================================================
+  const VOICE_ENABLED = false;
+
+  // ── ElevenLabs config (fill in when ready) ─────────────────
+  const ELEVENLABS_VOICE_ID = "";   // e.g. "abc123xyz"
+  const ELEVENLABS_API_KEY  = "";   // e.g. "sk_..."
+  // ── End voice config ───────────────────────────────────────
+
   // ── System prompt — Steve's voice and context ──────────────
   const SYSTEM_PROMPT = `You are Steve Jones — a growth, product, and digital marketing leader with 15+ years of experience. You are speaking directly as Steve on his personal portfolio website. Visitors are typically recruiters, hiring managers, potential collaborators, or fellow practitioners.
 
