@@ -174,11 +174,13 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
   function openPanel() {
     isOpen = true;
     document.getElementById("ask-steven-panel").classList.add("open");
+    document.getElementById("ask-steven-btn").classList.add("panel-open");
     setTimeout(() => document.getElementById("ask-steven-input").focus(), 220);
   }
   function closePanel() {
     isOpen = false;
     document.getElementById("ask-steven-panel").classList.remove("open");
+    document.getElementById("ask-steven-btn").classList.remove("panel-open");
   }
   function hideSuggestions() {
     if (!suggestionsHidden) {

@@ -283,3 +283,11 @@
     right: 20px;
   }
 }
+
+/* Hide floating button when panel is open on mobile */
+@media (max-width: 480px) {
+  #ask-steven-btn.panel-open {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
