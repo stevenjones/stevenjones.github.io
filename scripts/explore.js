@@ -111,9 +111,9 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
 
   function defaultFollowUps() {
     return [
-      "What's his most recent leadership role?",
-      "Show me his AI-related work",
-      "How does he approach attribution?",
+      "What's your most recent leadership role?",
+      "Show me your AI-related work",
+      "How do you approach attribution?",
     ];
   }
 
@@ -133,14 +133,14 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
   };
 
   const seedPrompts = [
-    "Does Steve have experience with attribution?",
-    "What AI work has he done?",
-    "Show me his fintech experience",
-    "How does he lead cross-functional teams?",
-    "Tell me about his experimentation programs",
-    "What's his product marketing background?",
-    "Has he led a rebrand?",
-    "What does he believe about modern analytics?",
+    "Do you have experience with attribution?",
+    "What AI work have you done?",
+    "Show me your fintech experience",
+    "How do you lead cross-functional teams?",
+    "Tell me about your experimentation programs",
+    "What's your product marketing background?",
+    "Have you led a rebrand?",
+    "What do you believe about modern analytics?",
   ];
 
   function renderFacets() {
@@ -334,7 +334,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
           <div class="ex-bar-l">
             <span class="ex-dot"></span>
             <span class="ex-title">Career Intelligence</span>
-            <span class="ex-subtitle">Steven Jones · AI-powered exploration</span>
+            <span class="ex-subtitle">My career · AI-powered exploration</span>
           </div>
           <div class="ex-bar-r">
             <span class="ex-stat">${records.length} records indexed</span>
@@ -359,9 +359,9 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
           <main class="ex-main">
             <div class="ex-intro">
               <p class="eyebrow">AI-powered career intelligence</p>
-              <h2 class="ex-h2">Ask anything about <em>Steve's</em> work.</h2>
+              <h2 class="ex-h2">Ask anything about <em>my</em> work.</h2>
               <p class="ex-lede">
-                A conversational layer over Steve's full professional history — roles, projects, skills, philosophies. The AI retrieves, ranks, and synthesizes experiences in real time.
+                A conversational layer over my full professional history — roles, projects, skills, philosophies. The AI retrieves, ranks, and synthesizes experiences in real time.
               </p>
               <div class="ex-seeds">
                 ${seedPrompts.map(p => `<button class="ex-seed" data-q="${escapeAttr(p)}">${escapeHtml(p)}</button>`).join("")}
