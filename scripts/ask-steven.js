@@ -95,6 +95,11 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
   let isLoading = false;
   let suggestionsHidden = false;
 
+  // ── Voice state ────────────────────────────────────────────
+  let voiceActive = false;
+  let recognition = null;
+  let currentAudio = null;
+
   // ── Build UI ───────────────────────────────────────────────
   function init() {
     injectButton();
@@ -146,6 +151,14 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
             <path d="M14 8L2 2l2.5 6L2 14l12-6z" fill="#f4f0e8"/>
           </svg>
         </button>
+        ${VOICE_ENABLED ? `
+        <button id="ask-steven-mic" aria-label="Toggle voice input" title="Voice input">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="2" width="6" height="10" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 10a6 6 0 0 0 12 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="10" y1="16" x2="10" y2="19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>` : ''}
       </div>
     `;
     document.body.appendChild(panel);
@@ -295,6 +308,7 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
       removeTypingIndicator();
       addMessage("steve", reply);
       messages.push({ role: "assistant", content: reply });
+      if (VOICE_ENABLED) speakResponse(reply);
 
     } catch (err) {
       removeTypingIndicator();
@@ -352,6 +366,98 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     ];
 
     return careerSignals.some(sig => t.includes(sig));
+  }
+
+
+  // ── Voice: Web Speech API input ───────────────────────────
+  function toggleVoice() {
+    if (!VOICE_ENABLED) return;
+    voiceActive ? stopVoice() : startVoice();
+  }
+
+  function startVoice() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      addMessage("steve", "Voice input isn't supported in this browser. Try Chrome or Edge!");
+      return;
+    }
+
+    voiceActive = true;
+    updateMicUI(true);
+
+    recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.lang = "en-US";
+
+    const input = document.getElementById("ask-steven-input");
+
+    recognition.onresult = (e) => {
+      const transcript = Array.from(e.results)
+        .map(r => r[0].transcript)
+        .join("");
+      input.value = transcript;
+      input.style.height = "auto";
+      input.style.height = Math.min(input.scrollHeight, 100) + "px";
+    };
+
+    recognition.onend = () => {
+      voiceActive = false;
+      updateMicUI(false);
+      const text = input.value.trim();
+      if (text) handleSend();
+    };
+
+    recognition.onerror = (e) => {
+      voiceActive = false;
+      updateMicUI(false);
+      if (e.error !== "no-speech") {
+        addMessage("steve", "Couldn\'t catch that — try again or just type!");
+      }
+    };
+
+    recognition.start();
+  }
+
+  function stopVoice() {
+    voiceActive = false;
+    updateMicUI(false);
+    recognition?.stop();
+  }
+
+  function updateMicUI(active) {
+    const micBtn = document.getElementById("ask-steven-mic");
+    if (!micBtn) return;
+    micBtn.classList.toggle("mic-active", active);
+    micBtn.setAttribute("aria-label", active ? "Listening… click to stop" : "Toggle voice input");
+  }
+
+  // ── Voice: ElevenLabs TTS output ──────────────────────────
+  async function speakResponse(text) {
+    if (!VOICE_ENABLED) return;
+    // Stop any currently playing audio
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio = null;
+    }
+    try {
+      const res = await fetch("/api/speak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      if (!res.ok) return;
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      currentAudio = new Audio(url);
+      currentAudio.play();
+      currentAudio.onended = () => {
+        URL.revokeObjectURL(url);
+        currentAudio = null;
+      };
+    } catch (err) {
+      console.warn("TTS error:", err);
+    }
   }
 
   // ── Boot ───────────────────────────────────────────────────
