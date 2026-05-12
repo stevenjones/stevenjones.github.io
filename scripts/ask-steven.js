@@ -1,5 +1,5 @@
 /* ============================================================
-   Ask Steven — AI Chat Widget
+   Go ahead, ask — AI Chat Widget
    Powered by Claude (Anthropic API)
    ============================================================ */
 
@@ -84,14 +84,14 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
   function injectButton() {
     const btn = document.createElement("button");
     btn.id = "ask-steven-btn";
-    btn.setAttribute("aria-label", "Ask Steven anything");
+    btn.setAttribute("aria-label", "Go ahead, ask anything");
     btn.innerHTML = `
       <svg class="ask-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
         <path d="M7 8.5C7 7.12 8.12 6 9.5 6S12 7.12 12 8.5c0 1.1-.67 2.04-1.62 2.44C10.15 11.11 10 11.42 10 11.75V12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         <circle cx="10" cy="14.5" r="0.75" fill="currentColor"/>
       </svg>
-      Ask Steven
+      Go ahead, ask
     `;
     document.body.appendChild(btn);
   }
@@ -264,7 +264,7 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     } catch (err) {
       removeTypingIndicator();
       addMessage("steve", "Hmm, something went wrong on my end. Try refreshing and asking again — or just shoot me an email at jonsie1312@gmail.com.");
-      console.error("Ask Steven error:", err);
+      console.error("Go ahead, ask error:", err);
     } finally {
       isLoading = false;
     }
