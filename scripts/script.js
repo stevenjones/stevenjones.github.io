@@ -41,3 +41,21 @@ document.querySelectorAll('.case-row').forEach(row => {
 // Year
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
+
+// Résumé modal
+const modal = document.getElementById('resume-modal');
+const openBtn = document.getElementById('open-resume');
+const openModal = (e) => {
+  if (e) e.preventDefault();
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
+const closeModal = () => {
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+openBtn?.addEventListener('click', openModal);
+modal?.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal?.getAttribute('aria-hidden') === 'false') closeModal();
+});
