@@ -142,13 +142,13 @@ section { padding: var(--section-y) 0; }
   height: 1px; background: currentColor; transition: right .3s ease;
 }
 .nav-links a:hover::after { right: 0; }
-.nav-cta {
+.nav-cta, .nav-links a.nav-cta {
   border: none; padding: 6px 0; border-radius: 0; white-space: nowrap;
   font-size: 14px; font-weight: 600;
-  color: #c85a2b;
-  transition: opacity .2s ease;
+  color: #c85a2b !important;
+  transition: color .2s ease;
 }
-.nav-cta:hover { background: none; color: #c85a2b; opacity: 0.75; }
+.nav-cta:hover, .nav-links a.nav-cta:hover { background: none; color: #2c2825 !important; opacity: 1; }
 .nav-cta::after { display: none !important; }
 
 .menu-btn { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
