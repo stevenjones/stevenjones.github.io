@@ -291,3 +291,23 @@
     pointer-events: none;
   }
 }
+
+/* Mobile close button in input row */
+.ask-close-mobile {
+  display: none;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(26,23,21,0.08);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1a1715;
+  transition: background 0.15s;
+}
+.ask-close-mobile:hover { background: rgba(26,23,21,0.14); }
+
+@media (max-width: 480px) {
+  .ask-close-mobile { display: flex; align-items: center; justify-content: center; }
+}

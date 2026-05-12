@@ -118,6 +118,7 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
         ${SUGGESTIONS.map(q => `<button class="ask-suggestion">${q}</button>`).join("")}
       </div>
       <div class="ask-input-row">
+        <button class="ask-close-mobile" aria-label="Close chat">✕</button>
         <textarea id="ask-steven-input" placeholder="Ask me about my work, experience, or Fuzely…" rows="1" maxlength="500"></textarea>
         <button id="ask-steven-send" aria-label="Send message">
           <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
