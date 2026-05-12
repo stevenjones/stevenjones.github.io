@@ -262,6 +262,10 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
     const text = input.value.trim();
     if (!text) return;
 
+    // Capture voice state then stop recording before sending
+    const voiceWasActive = VOICE_ENABLED && voiceActive;
+    if (voiceWasActive) stopVoice();
+
     input.value = "";
     input.style.height = "auto";
     hideSuggestions();
@@ -308,8 +312,7 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
       removeTypingIndicator();
       addMessage("steve", reply);
       messages.push({ role: "assistant", content: reply });
-      if (voiceActive) speakResponse(reply);
-      if (VOICE_ENABLED) speakResponse(reply);
+      if (VOICE_ENABLED && voiceWasActive) speakResponse(reply);
 
     } catch (err) {
       removeTypingIndicator();
