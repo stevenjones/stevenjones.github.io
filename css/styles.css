@@ -698,3 +698,11 @@ section { padding: var(--section-y) 0; }
   .strip-track { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Landscape mobile nav fix */
+@media (max-width: 900px) and (orientation: landscape) {
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 12px; }
+  .nav-cta { padding: 8px 16px; font-size: 12px; }
+  .brand { font-size: 18px; }
+}
