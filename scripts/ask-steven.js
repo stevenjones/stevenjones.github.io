@@ -232,11 +232,10 @@ Keep responses conversational and focused. 2-4 short paragraphs max unless a det
     addTypingIndicator();
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "anthropic-dangerous-allow-cors": "true",
         },
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
