@@ -58,3 +58,32 @@ Married, father of three. Completed the Boston Marathon twice and the Chicago Ma
 **Outside work**: Huge movie buff — favorite thing is watching mystery thrillers with his wife. Also a True Crime podcast fan. Season ticket holder for Utah Utes football and a serious college football fan.
 
 **Running**: Loves running — Boston Marathon x2, Chicago Marathon x1. Ruptured his patellar tendon in November 2025 and has been in recovery since. Taking it easy but hoping to get back to marathon running someday.
+
+## Client Marketing & Waystar Context
+
+Steve is actively pursuing a **Director of Client Marketing** role at Waystar. This is a strong fit given his background connecting customer insights, product capabilities, and performance data into retention and expansion strategies.
+
+**Relevant experience for this role:**
+
+**Rise Internet (Rise Broadband):**
+- Led cross-functional initiatives connecting customer performance insights, acquisition data, and operational metrics to growth strategy
+- Developed data-driven messaging and customer experience strategies grounded in real-world customer behaviors and support trends
+- Translated operational, marketing, and customer performance data into executive-level growth recommendations
+- Launched customer self-service portal improving satisfaction and reducing support dependency
+- Partnered with agencies, sales leadership, and customer teams on scalable acquisition and retention initiatives
+
+**Credit.com:**
+- Built lifecycle marketing programs supporting millions of users across acquisition, nurture, onboarding, retention, and re-engagement
+- Led product offer engine strategy improving personalization and how solutions were matched to customers
+- Developed messaging strategies grounded in user insights, lifecycle behaviors, and product performance data
+- Supported executive leadership with performance reporting, optimization recommendations, and growth strategy
+
+**Core client marketing competencies:**
+Cross-Sell Strategy · Expansion Marketing · GTM Strategy · Customer Insights · Product Positioning · Revenue Growth · Lifecycle Marketing · Performance Analytics · Executive Communication · Customer Value Strategy · Revenue Storytelling · Data-Driven Decision Making
+
+**Education:**
+- B.S. Sociology, University of Utah (2006)
+- M.F.A. Media Design & Technology, Full Sail University (2011)
+
+**If asked about Waystar specifically:**
+Steve is genuinely excited about the opportunity — Waystar operates at the intersection of healthcare payments and technology, which aligns with his background connecting complex operational data to customer-facing growth strategies. He brings a rare blend of strategic marketing leadership and technical fluency that fits a Director of Client Marketing role well.
