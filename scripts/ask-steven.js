@@ -238,7 +238,7 @@ Keep responses conversational and focused. 2-4 short paragraphs max unless a det
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
+          model: "claude-sonnet-4-5",
           max_tokens: 1000,
           system: SYSTEM_PROMPT,
           messages: messages,
