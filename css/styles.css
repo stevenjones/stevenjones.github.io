@@ -1565,3 +1565,11 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
   .ex-brief-overlay { padding: 0; align-items: flex-end; }
   .ex-brief-panel { border-radius: 20px 20px 0 0; max-height: 90vh; }
 }
+
+/* Intro — remove ex-how space, let seeds breathe more */
+.ex-seeds {
+  margin-bottom: 0 !important;
+}
+.ex-intro {
+  padding-bottom: 8px;
+}

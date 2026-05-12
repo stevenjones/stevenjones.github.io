@@ -366,17 +366,12 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
               <p class="eyebrow">AI-powered career intelligence</p>
               <h2 class="ex-h2">Ask anything about <em>my</em> work.</h2>
               <p class="ex-lede">
-                A conversational layer over my full professional history — roles, projects, skills, philosophies. The AI retrieves, ranks, and synthesizes experiences in real time.
+                Ask about a skill, company, project, or how I think — and get a specific, AI-synthesized answer drawn from my full career history.
               </p>
               <div class="ex-seeds">
                 ${seedPrompts.map(p => `<button class="ex-seed" data-q="${escapeAttr(p)}">${escapeHtml(p)}</button>`).join("")}
               </div>
-              <div class="ex-how">
-                <div><span class="ex-num">01</span><div><strong>Retrieve.</strong> Searches structured experience records.</div></div>
-                <div><span class="ex-num">02</span><div><strong>Rank.</strong> AI ranks relevance and selects the most useful matches.</div></div>
-                <div><span class="ex-num">03</span><div><strong>Synthesize.</strong> Generates a recruiter-friendly narrative summary.</div></div>
-                <div><span class="ex-num">04</span><div><strong>Explore.</strong> Drill into related skills, tools, and follow-up questions.</div></div>
-              </div>
+
             </div>
 
             <div class="ex-results"></div>
