@@ -466,10 +466,6 @@ Keep responses to 2-3 sentences max. Lead with the punchline. If they want more,
   // Gated by VOICE_ENABLED flag at top of file.
   // Uses Web Speech API for input, ElevenLabs for output.
   // ──────────────────────────────────────────────────────────
-  let voiceActive = false;
-  let recognition = null;
-  let currentAudio = null;
-
   function initVoice() {
     if (!VOICE_ENABLED) return;
 
