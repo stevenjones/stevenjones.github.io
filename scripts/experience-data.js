@@ -20,7 +20,8 @@ window.EXPERIENCE_RECORDS = [
     related_skills: ["Growth Strategy", "Product Marketing", "Cross-Functional Leadership", "Brand Strategy"],
     tools: ["GA4", "Invoca", "Snowflake", "AEM", "VWO"],
     tags: ["growth", "leadership", "attribution", "cx", "telecom", "rebrand", "executive"],
-    impact: "70% YoY sales growth · 30% lower CAC"
+    impact: "70% YoY sales growth · 30% lower CAC",
+    companies: ["Rise Internet"]
   },
   {
     id: "role-credit-2019",
@@ -35,7 +36,8 @@ window.EXPERIENCE_RECORDS = [
     related_skills: ["Personalization", "Lifecycle Marketing", "CRO", "CMS Modernization", "Executive Reporting"],
     tools: ["Adobe Target", "Adobe Analytics", "AEM", "Optimizely", "VWO"],
     tags: ["growth", "fintech", "personalization", "lifecycle", "cro", "experimentation", "leadership"],
-    impact: "Scaled growth across multiple fintech brands"
+    impact: "Scaled growth across multiple fintech brands",
+    companies: ["Credit.com", "Lexington Law", "CreditRepair.com"]
   },
   {
     id: "role-credit-2016",
@@ -50,7 +52,8 @@ window.EXPERIENCE_RECORDS = [
     related_skills: ["Martech Architecture", "Headless CMS", "Attribution", "Experimentation Ops", "Tag Management"],
     tools: ["Adobe Target", "Adobe Analytics", "Adobe Launch", "AEM", "Optimizely", "VWO", "Invoca"],
     tags: ["martech", "headless", "attribution", "experimentation", "operations", "fintech"],
-    impact: "Months → Days release cadence"
+    impact: "Months → Days release cadence",
+    companies: ["Credit.com"]
   },
   {
     id: "role-lendio-2015",
@@ -106,7 +109,8 @@ window.EXPERIENCE_RECORDS = [
     description: "Front-end development and digital experience work for a fast-growing consumer technology brand. The foundation for ecommerce optimization, UX thinking, and digital customer experience that informs every role since.",
     related_skills: ["Front-End Development", "Ecommerce", "UX", "Digital Customer Experience"],
     tools: ["HTML", "CSS", "JavaScript"],
-    tags: ["ecommerce", "engineering", "ux", "consumer-tech"]
+    tags: ["ecommerce", "engineering", "ux", "consumer-tech"],
+    companies: ["ZAGG"]
   },
 
   // ----------- PROJECTS -----------
@@ -329,10 +333,11 @@ window.EXPERIENCE_RECORDS = [
     id: "skill-ecommerce",
     type: "skill",
     skill_area: "Ecommerce Optimization",
-    summary: "Ecommerce experience from ZAGG's consumer-tech catalog to Rise Internet's checkout flows.",
-    description: "Ecommerce foundation built at ZAGG (consumer electronics catalog and marketing experiences) and applied across every growth role since — including Rise Internet's online order flows and Credit.com's product purchase paths.",
+    summary: "Ecommerce optimization experience spanning consumer electronics, fintech, and ISP digital storefronts.",
+    description: "Ecommerce foundation built at ZAGG — consumer electronics catalog, marketing experiences, and conversion optimization. That foundation carried into every subsequent role, informing how digital storefronts, checkout flows, and product purchase paths get built and optimized.",
     related_skills: ["Checkout Optimization", "Catalog UX", "Conversion", "Site Performance"],
-    tags: ["ecommerce", "checkout", "optimization", "consumer"]
+    tags: ["ecommerce", "checkout", "optimization", "consumer"],
+    companies: ["ZAGG"]
   },
 
   // ----------- PHILOSOPHIES -----------

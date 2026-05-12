@@ -46,7 +46,8 @@
         score += matches;
         if ((r.tags || []).some(tag => tag.includes(t))) score += 2;
         if ((r.skill_area || "").toLowerCase().includes(t)) score += 1.5;
-        if ((r.company || "").toLowerCase().includes(t)) score += 1.5;
+        if ((r.company || "").toLowerCase().includes(t)) score += 4;
+        if ((r.companies || []).some(c => c.toLowerCase().includes(t))) score += 4;
       }
       return { r, score };
     }).sort((a, b) => b.score - a.score);
