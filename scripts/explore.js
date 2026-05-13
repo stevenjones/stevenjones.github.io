@@ -277,10 +277,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
           <div class="ex-themes">
             ${themes.map(t => `<span class="ex-theme">${escapeHtml(t)}</span>`).join("")}
           </div>` : ""}
-        <div class="ex-meta-row">
-          <span>${recs.length} relevant experiences</span>
-          <button class="ex-build-resume" id="ex-build-resume-btn">Build recruiter brief ↗</button>
-        </div>
+
       </div>
       <div class="ex-cards">
         ${recs.map(r => renderCard(r, themes)).join("")}
@@ -314,10 +311,6 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
     ui.results.querySelectorAll("[data-q]").forEach(el => {
       el.addEventListener("click", () => ask(el.dataset.q));
     });
-
-    // Wire build recruiter brief button
-    const buildBtn = ui.results.querySelector("#ex-build-resume-btn");
-    if (buildBtn) buildBtn.addEventListener("click", () => buildRecruiterBrief(payload));
 
     // Scroll to top of results
     ui.results.scrollTo({ top: 0, behavior: "smooth" });

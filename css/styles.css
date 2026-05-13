@@ -1638,3 +1638,6 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
 @media (max-width: 900px) {
   .ex-mobile-facets { display: block; }
 }
+
+/* Remove gap left by ex-meta-row */
+.ex-answer .ex-themes { margin-bottom: 4px; }
