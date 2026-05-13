@@ -1679,7 +1679,8 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
   }
 }
 
-/* Hide case-num breadcrumb on mobile */
+/* Hide category tags in case-num on mobile, keep the case number */
 @media (max-width: 768px) {
-  .case-num { display: none; }
+  .case-num span:not(:first-child) { display: none; }
+  .case-num span:first-child::after { display: none; }
 }
