@@ -113,7 +113,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
   function defaultFollowUps() {
     return [
       "What's your most recent leadership role?",
-      "Show me your AI-related work",
+      "Your AI-related work",
       "How do you approach attribution?",
     ];
   }
@@ -134,14 +134,14 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
   };
 
   const seedPrompts = [
-    "Do you have experience with attribution?",
-    "What AI work have you done?",
-    "Show me your fintech experience",
-    "How do you lead cross-functional teams?",
-    "Tell me about your experimentation programs",
-    "What's your product marketing background?",
-    "Have you led a rebrand?",
-    "What do you believe about modern analytics?",
+    "Attribution experience",
+    "AI work and tools",
+    "Fintech background",
+    "Cross-functional leadership",
+    "Experimentation programs",
+    "Product marketing background",
+    "heysteve.io work",
+    "Modern analytics philosophy",
   ];
 
   function renderFacets() {
@@ -159,7 +159,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
           <h5>${label}</h5>
           <ul>
             ${entries.map(([name, count]) => `
-              <li><button class="ex-facet-chip" data-q="${escapeAttr("Show me Steve's " + name + " work")}">${name} <span>${count}</span></button></li>
+              <li><button class="ex-facet-chip" data-q="${escapeAttr(name + " work")}">${name} <span>${count}</span></button></li>
             `).join("")}
           </ul>
         </div>
@@ -240,7 +240,6 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
 
     ui.results.innerHTML = `
       <div class="ex-answer">
-        <p class="eyebrow">AI summary · in response to</p>
         <h3 class="ex-question">${escapeHtml(query)}</h3>
         <p class="ex-summary-text">${escapeHtml(summary)}</p>
         ${themes && themes.length ? `
