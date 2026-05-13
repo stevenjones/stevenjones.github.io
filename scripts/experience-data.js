@@ -352,16 +352,16 @@ window.EXPERIENCE_RECORDS = [
   {
     id: "phil-builder",
     type: "philosophy",
-    skill_area: "Working Belief",
+    skill_area: "How I Work",
     summary: "A builder at the intersection of strategy, data, creativity, and technology.",
     description: "My career origin in full-stack dev shaped a core belief: the best growth leaders sit at the intersection of strategy and execution. I speak code, design, analytics, and brand fluently enough to translate between teams — and I care more about shipped systems than tidy decks.",
     related_skills: ["Strategy", "Execution", "Cross-Functional Translation"],
-    tags: ["philosophy", "working-belief", "mindset", "builder"]
+    tags: ["philosophy", "mindset", "builder"]
   },
   {
     id: "phil-systems",
     type: "philosophy",
-    skill_area: "Working Belief",
+    skill_area: "Systems Thinking",
     summary: "Build the system, not just the campaign — durable infrastructure beats one-off wins.",
     description: "My operating belief: most growth problems are systems problems. Attribution gaps, slow release cycles, brittle martech, channel-blind reporting — these compound. Investing in the underlying system (attribution infrastructure, headless CMS, experimentation ops) creates leverage every campaign benefits from.",
     related_skills: ["Systems Thinking", "Infrastructure", "Operational Excellence"],
@@ -370,7 +370,7 @@ window.EXPERIENCE_RECORDS = [
   {
     id: "phil-ai-active",
     type: "philosophy",
-    skill_area: "Working Belief",
+    skill_area: "AI Philosophy",
     summary: "Analytics should be an active operating system, not a passive dashboard.",
     description: "The thesis behind Fuzely and the way I believe every modern growth team should operate: dashboards that just describe what happened are obsolete. Modern analytics, paired with LLMs and structured retrieval, can dynamically surface what to do next — turning insight into action.",
     related_skills: ["AI Product", "Operational AI", "Analytics", "Decision Systems"],
@@ -506,7 +506,7 @@ window.EXPERIENCE_RECORDS = [
     summary: "Remote-capable and hybrid-preferred. Misses in-office energy. Believes face-to-face time builds better teams.",
     description: "I work well remotely and have done so effectively, but genuinely value in-person collaboration for the relationship depth and creative energy it creates. I thrive in environments where strategy and execution coexist — where leaders are expected to both think and do. I dislike bureaucratic processes, endless approval chains, and organizations where politics matter more than outcomes. I am energized by ambitious problems, fast iteration, and teams that care about the work.",
     related_skills: ["Remote Work", "Hybrid Collaboration", "Cross-Functional Leadership"],
-    tags: ["philosophy", "working-belief", "culture", "work-style", "remote", "hybrid"]
+    tags: ["philosophy", "culture", "work-style", "remote", "hybrid"]
   },
   {
     id: "approach-digital-transformation",
