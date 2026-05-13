@@ -1573,3 +1573,68 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
 .ex-intro {
   padding-bottom: 8px;
 }
+
+/* ── Mobile Facet Strip ───────────────────────────────────── */
+.ex-mobile-facets {
+  display: none;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.ex-mobile-facets-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.ex-mobile-facets-scroll::-webkit-scrollbar { display: none; }
+
+.ex-mobile-facets-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-right: 2px;
+}
+.ex-mobile-facets-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--rule);
+  flex-shrink: 0;
+  margin: 0 4px;
+}
+.ex-mobile-chip {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--bg-2);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.ex-mobile-chip:hover,
+.ex-mobile-chip:active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+@media (max-width: 900px) {
+  .ex-mobile-facets { display: block; }
+}

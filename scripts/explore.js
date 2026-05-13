@@ -144,6 +144,37 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
     "Modern analytics philosophy",
   ];
 
+
+  function renderMobileFacets() {
+    // Flatten companies and skill areas into a single horizontal strip
+    const companies = [...facets.company.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8);
+    const skills = [...facets.skill_area.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6);
+
+    const companyChips = companies.map(([name]) =>
+      `<button class="ex-mobile-chip" data-q="${escapeAttr(name + " work")}">${escapeHtml(name)}</button>`
+    ).join("");
+
+    const skillChips = skills.map(([name]) =>
+      `<button class="ex-mobile-chip" data-q="${escapeAttr(name + " experience")}">${escapeHtml(name)}</button>`
+    ).join("");
+
+    return `
+      <div class="ex-mobile-facets" id="ex-mobile-facets">
+        <div class="ex-mobile-facets-scroll">
+          <span class="ex-mobile-facets-label">Companies</span>
+          ${companyChips}
+          <span class="ex-mobile-facets-divider"></span>
+          <span class="ex-mobile-facets-label">Skills</span>
+          ${skillChips}
+        </div>
+      </div>
+    `;
+  }
+
   function renderFacets() {
     const sections = [
       ["Skill area", "skill_area"],
@@ -361,6 +392,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
           </aside>
 
           <main class="ex-main">
+            ${renderMobileFacets()}
             <div class="ex-intro">
               <p class="eyebrow">Explore my work · AI-assisted</p>
               <h2 class="ex-h2">Ask anything about <em>my</em> work.</h2>
@@ -403,7 +435,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
 
     ui.form.addEventListener("submit", (e) => { e.preventDefault(); ask(ui.input.value); });
     wrapper.querySelectorAll("[data-close]").forEach(el => el.addEventListener("click", close));
-    wrapper.querySelectorAll(".ex-seed, .ex-facet-chip").forEach(b => b.addEventListener("click", () => ask(b.dataset.q)));
+    wrapper.querySelectorAll(".ex-seed, .ex-facet-chip, .ex-mobile-chip").forEach(b => b.addEventListener("click", () => ask(b.dataset.q)));
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && wrapper.getAttribute("aria-hidden") === "false") close();
     });
