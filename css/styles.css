@@ -1659,3 +1659,27 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
     padding-top: 20px;
   }
 }
+
+/* Mobile: disable text selection on case study metadata and tags */
+@media (max-width: 768px) {
+  .case-num,
+  .case-num span,
+  .eyebrow-company,
+  .eyebrow {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Tighten case-num spacing on mobile */
+  .case-num {
+    margin-bottom: 12px;
+    gap: 8px;
+    font-size: 10px;
+  }
+}
+
+/* Hide case-num breadcrumb on mobile */
+@media (max-width: 768px) {
+  .case-num { display: none; }
+}
