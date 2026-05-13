@@ -11,7 +11,7 @@
   // Set VOICE_ENABLED to true once ElevenLabs credentials are
   // configured below. Set to false to completely disable voice.
   // ============================================================
-  const VOICE_ENABLED = false;
+  const VOICE_ENABLED = true;
 
   // ── ElevenLabs config (fill in when ready) ─────────────────
   // Credentials stored securely in Vercel environment variables
