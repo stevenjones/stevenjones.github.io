@@ -1685,7 +1685,3 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
   .case-num span:first-child::after { display: none; }
 }
 
-/* Hide work count on mobile */
-@media (max-width: 768px) {
-  .work-count { display: none; }
-}
