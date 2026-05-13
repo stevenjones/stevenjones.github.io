@@ -285,7 +285,18 @@ section { padding: var(--section-y) 0; }
   padding: 18px 0; border-bottom: 1px solid var(--rule-2);
 }
 .cap-list .num {
-  font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .12em; width: 32px;
+  width: 24px;
+  flex-shrink: 0;
+}
+.cap-list .num::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 8px;
+  vertical-align: middle;
 }
 .cap-list .label {
   font-family: var(--serif); font-size: clamp(20px, 2vw, 26px); letter-spacing: -0.01em;
