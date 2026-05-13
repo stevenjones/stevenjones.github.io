@@ -1645,9 +1645,12 @@ button.ex-chip:hover { background: var(--ink); color: var(--bg); border-color: v
 /* Add breathing room between mobile facet strip and intro eyebrow */
 @media (max-width: 900px) {
   .ex-mobile-facets {
-    margin-bottom: 8px;
+    margin-bottom: 0;
+  }
+  .ex-mobile-facets-scroll {
+    padding-bottom: 14px;
   }
   .ex-intro {
-    padding-top: 8px;
+    padding-top: 16px;
   }
 }
