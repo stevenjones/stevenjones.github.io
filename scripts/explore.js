@@ -361,7 +361,7 @@ Respond with ONLY a valid JSON object in this exact shape, no prose, no markdown
         <header class="ex-bar">
           <div class="ex-bar-l">
             <span class="ex-dot"></span>
-            <span class="ex-title">Work & Thinking</span>
+            <span class="ex-title">My Work</span>
             <span class="ex-subtitle">Explore my work · AI-assisted</span>
           </div>
           <div class="ex-bar-r">
