@@ -807,7 +807,7 @@ section { padding: var(--section-y) 0; }
 .modal-body::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 4px; }
 
 /* Résumé hero */
-.rz-hero { padding-bottom: 40px; border-bottom: 1px solid var(--rule); }
+.rz-hero { padding-top: 0; padding-bottom: 40px; border-bottom: 1px solid var(--rule); }
 .rz-meta {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
   margin: 36px 0 0; padding-top: 24px;
